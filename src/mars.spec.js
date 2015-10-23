@@ -9,7 +9,7 @@ describe('Mars', function() {
             mars.__set__('boundaries', {});
         });
 
-        it('sets outer boundaries', function() {
+        it('sets boundaries', function() {
             mars.init(10, 15);
 
             expect(mars.__get__('boundaries')).to.deep.equal({
@@ -43,13 +43,13 @@ describe('Mars', function() {
 
         it('returns true if robot has position outside of boundaries', function() {
             expect(mars.isRobotLost({
-                x: 10,
+                x: 11,
                 y: 14
             })).to.equal(true);
 
             expect(mars.isRobotLost({
                 x: 9,
-                y: 15
+                y: 16
             })).to.equal(true);
 
             expect(mars.isRobotLost({
@@ -116,7 +116,7 @@ describe('Mars', function() {
                 x: 12,
                 y: 10
             }, 'E');
-            
+
             expect(mars.__get__('traces')).to.deep.equal({
                 'E': [{
                     x: 0,

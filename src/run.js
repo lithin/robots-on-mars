@@ -1,3 +1,5 @@
+'use strict';
+
 var Robot = require('./robot');
 var mars = require('./mars');
 var fs = require('fs');
@@ -23,7 +25,7 @@ var init = function() {
         robot = new Robot(parseInt(robotPositionArray[0], 10), parseInt(robotPositionArray[1], 10), robotPositionArray[2]);
         robot.run(lines[i + 1]);
     }
-}
+};
 
 module.exports = {
     init: init

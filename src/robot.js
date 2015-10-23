@@ -1,3 +1,5 @@
+'use strict';
+
 var mars = require('./mars');
 
 var Robot = function(x, y, facing) {
@@ -16,16 +18,16 @@ var Robot = function(x, y, facing) {
             this.position.y++;
         }).bind(this),
         E: (function() {
-            this.position.x++
+            this.position.x++;
         }).bind(this),
         S: (function() {
-            this.position.y--
+            this.position.y--;
         }).bind(this),
         W: (function() {
-            this.position.x--
+            this.position.x--;
         }).bind(this)
-    }
-}
+    };
+};
 
 Robot.prototype.run = function(instructions) {
     var letter;
@@ -55,7 +57,7 @@ Robot.prototype.move = function(action) {
 
 Robot.prototype.turn = function(direction) {
     var directions = ['E', 'S', 'W', 'N'];
-    var index = directions.indexOf(this.facing);;
+    var index = directions.indexOf(this.facing);
     var newDirection;
 
     if (direction === 'R') {
